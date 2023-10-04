@@ -4,8 +4,10 @@ import { AutocompleteDropdown } from 'react-native-autocomplete-dropdown';
 import { UniDataSet } from '../../data/Data';
 import { Dimensions } from 'react-native';
 import useCustomFont from '../../data/useCustomFont';
+import { useSetRecoilState } from 'recoil';
+import { univerItem } from '../../atom/homeAtom';
 function SearchListBar() {
-    const [selectedItem, setSelectedItem] = useState(null);
+    const setSelectedItem = useSetRecoilState(univerItem)
     const fontLoaded = useCustomFont('Bazzi', require('../../assets/fonts/Bazzi.ttf'))
     return (
         <AutocompleteDropdown
