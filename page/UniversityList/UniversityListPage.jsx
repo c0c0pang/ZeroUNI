@@ -10,9 +10,12 @@ import useCustomFont from '../../data/useCustomFont';
 import BackIcon from '../../assets/icon/Back.svg'
 import { useNavigation } from '@react-navigation/native';
 import { GlobaSafeAreaView } from '../../style/globalStyled';
+import { useRecoilValue } from 'recoil';
+import { univerItem } from '../../atom/homeAtom';
 function UniversityListPage() {
     const fontLoaded = useCustomFont('Bazzi', require('../../assets/fonts/Bazzi.ttf'));
     const navigation = useNavigation();
+    const selectedItem = useRecoilValue(univerItem)
     return (
         <AutocompleteDropdownContextProvider>
             <GlobaSafeAreaView>
@@ -25,9 +28,9 @@ function UniversityListPage() {
                     </SearchBackView>
                     <ThemeProvider theme={fontLoaded ? { fontFamily: 'Bazzi' } : {}}>
                         <UniFalatList
-                            data={UniDataSet}
+                            data={selectedItem === null ? (UniDataSet) : ([selectedItem])}
                             renderItem={({ item }) => (
-                                <UniImgCardView>
+                                <UniImgCardView onPress={() => navigation.navigate('UniMarketPage', { icon: item.uni, title: item.title, fontLoaded: fontLoaded })}>
                                     <WithLocalSvg asset={item.uni} width={53} height={53} />
                                     <UniImgText>{item.title}</UniImgText>
                                 </UniImgCardView>
