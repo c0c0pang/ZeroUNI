@@ -11,16 +11,19 @@ import MapCIcon from '../assets/icon/MapC.svg';
 import MoreIcon from '../assets/icon/More.svg';
 import MoreCIcon from '../assets/icon/MoreC.svg';
 import HomeStack from '../page/Home/HomeStack';
+import { useRecoilValue } from 'recoil';
+import { navigatorState } from '../atom/homeAtom';
 const Tab = createBottomTabNavigator();
 function BottomNav() {
+    const tabBarState = useRecoilValue(navigatorState)
     return (
         <NavigationContainer>
             <Tab.Navigator
-                initialRouteName="Home"
+                initialRouteName="Main"
                 screenOptions={({ route }) => ({
                     unmountOnBlur: true,
                     tabBarIcon: ({ focused }) => {
-                        if (route.name === "Home") {
+                        if (route.name === "Main") {
                             return <WithLocalSvg asset={focused ? (HomeCIcon) : (HomeIcon)} />;
                         }
                         if (route.name === "Map") {
@@ -35,9 +38,13 @@ function BottomNav() {
                     headerShadowVisible: false, // 헤더 border 제거
                 })}
             >
-                <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Map" component={MapPage} />
-                <Tab.Screen name="More" component={MorePage} />
+                {tabBarState ? (
+                    <Tab.Screen name="Main" component={HomeStack} />
+                ) : (<>
+                    <Tab.Screen name="Main" component={HomeStack} />
+                    <Tab.Screen name="Map" component={MapPage} />
+                    <Tab.Screen name="More" component={MorePage} />
+                </>)}
             </Tab.Navigator>
         </NavigationContainer >
     )
