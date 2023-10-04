@@ -39,7 +39,7 @@ export const UserInfoCard = styled(CardView)`
 `;
 
 export const UserInfoText = styled(BazziText)`
-    font-size: 15px;
+    font-size: 18px;
 `;
 
 export const UserInfoPointView = styled.View`

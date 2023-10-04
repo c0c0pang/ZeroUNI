@@ -27,7 +27,7 @@ export const UniImgCardView = styled.TouchableOpacity`
 
 export const UniImgText = styled.Text`
     font-family: ${(props) => props.theme.fontFamily};
-    font-size: 16;
+    font-size: 14px;
 `
 export const UniFalatList = styled.FlatList`
     margin-top: 10px;
@@ -38,4 +38,11 @@ export const SearchBackView = styled.View`
     align-items: center;
     justify-content: center;
     gap: 20px;
+`
+export const MarketView = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 8px;
 `
