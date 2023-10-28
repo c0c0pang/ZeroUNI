@@ -24,7 +24,7 @@ import BuildingsIcon from '../../assets/icon/Buildings.svg'
 import { AdList, RankData } from '../../data/Data'
 import RankListPage from './RankListPage'
 import Swiper from 'react-native-web-swiper'
-import { Dimensions, SafeAreaView, ScrollView, View } from 'react-native'
+import { Dimensions, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import useCustomFont from '../../data/useCustomFont'
 import { GlobaSafeAreaView } from '../../style/globalStyled'
@@ -37,12 +37,8 @@ const HomeScreen = () => {
     };
     const fontLoaded = async () => await useCustomFont('Bazzi', require('../../assets/fonts/Bazzi.ttf'));
     const openCameraHandler = async () => {
-        // 카메라에 대한 접근 권한을 얻을 수 있는지 묻는 함수입니다.
         const { status } = await Camera.requestCameraPermissionsAsync();
-
-        // 권한을 획득하면 status가 granted 상태가 됩니다.
         if (status === 'granted') {
-            // Camera 컴포넌트가 있는 CameraScreen으로 이동합니다.
             navigation.navigate('Camera');
         } else {
             Alert.alert('카메라 접근 허용은 필수입니다.');
@@ -111,12 +107,12 @@ const HomeScreen = () => {
                         <Swiper
                             loop
                             timeout={5}
-                            containerStyle={{ width: '100%', height: SCREEN_HEIGHT / 8 }}
+                            containerStyle={{ width: '100%', height: SCREEN_HEIGHT / 8, justifyContent: 'center' }}
                             controlsEnabled={false}
                         >
                             {AdList.map((item) => {
                                 return (
-                                    <WithLocalSvg asset={item} />
+                                    <WithLocalSvg asset={item} width='100%' />
                                 )
                             }
                             )}
