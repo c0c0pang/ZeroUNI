@@ -114,3 +114,53 @@ export const UniDataSet = [
         uni: Korea
     }
 ]
+export const CouponData = [
+    {
+        id: '0',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '10'
+    },
+    {
+        id: '1',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '15'
+    },
+    {
+        id: '2',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '20'
+    },
+    {
+        id: '3',
+        place: '제로카페',
+        menu: '제로메뉴',
+        discount: '10'
+    },
+    {
+        id: '4',
+        place: '제로카페',
+        menu: '제로메뉴',
+        discount: '15'
+    },
+    {
+        id: '5',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '15'
+    },
+    {
+        id: '6',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '5'
+    },
+    {
+        id: '7',
+        place: '제로식당',
+        menu: '제로메뉴',
+        discount: '10'
+    }
+]
