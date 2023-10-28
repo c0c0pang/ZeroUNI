@@ -57,6 +57,14 @@ export default function CameraScreen() {
     }
     return (
         <CameraView>
+            {image ? (
+                <AfterButtonView>
+                    <CameraButton onPress={() => setImage(false)} text={'재촬영'} color={'#629F3C'}></CameraButton>
+                    <CameraButton onPress={() => setImage(false)} text={'검사'} color={'#F6A79C'}></CameraButton>
+                </AfterButtonView>
+            ) :
+                null
+            }
             {
                 !image ? (
                     <Camera
@@ -73,14 +81,6 @@ export default function CameraScreen() {
                 ) : (
                     <Image source={{ uri: image }} style={{ flex: 1 }} />
                 )
-            }
-            {image ? (
-                <AfterButtonView>
-                    <CameraButton onPress={() => setImage(false)} text={'재촬영'} color={'#629F3C'}></CameraButton>
-                    <CameraButton onPress={() => setImage(false)} text={'검사'} color={'#F6A79C'}></CameraButton>
-                </AfterButtonView>
-            ) :
-                null
             }
         </CameraView>
     );
