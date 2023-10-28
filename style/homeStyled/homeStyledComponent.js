@@ -59,6 +59,8 @@ export const UserInfoPointText = styled(BazziText)`
 
 export const ContentView = styled.View`
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     gap: 20px;
 `;
@@ -69,7 +71,7 @@ export const ContentCard = styled(CardView)`
     justify-content: center;
     gap: 10px;
     height: 119px;
-    width: 160px;
+    width: 48%;
 `;
 
 export const ContentText = styled(BazziText)`

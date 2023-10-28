@@ -15,7 +15,7 @@ export const AfterButtonView = styled.SafeAreaView`
     flex-direction: row;
     justify-content: space-around;
     gap: 150px;
-    margin-bottom: 20px;
+    background-color: white;
 `
 export const AfterText = styled(BazziText)`
     font-size: 18px;

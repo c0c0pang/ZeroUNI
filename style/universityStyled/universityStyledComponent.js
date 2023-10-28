@@ -13,6 +13,7 @@ export const UniImgCardView = styled.TouchableOpacity`
     border-radius: 9px;
     gap: 8px;
     height: 95px;
+    width: 28%;
     ${Platform.select({
     ios: `
       shadow-offset: 0px 1px;
@@ -27,7 +28,7 @@ export const UniImgCardView = styled.TouchableOpacity`
 
 export const UniImgText = styled.Text`
     font-family: ${(props) => props.theme.fontFamily};
-    font-size: 14px;
+    font-size: 18px;
 `
 export const UniFalatList = styled.FlatList`
     margin-top: 10px;
@@ -43,6 +44,13 @@ export const MarketView = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
+`
+export const UniImgTextView = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
 `
