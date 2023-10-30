@@ -1,5 +1,6 @@
 import { Platform } from "react-native";
 import styled from "styled-components/native";
+import { fontPercentage, widthPercentage } from "../../responsiveSize";
 
 export const BazziText = styled.Text`
     font-family: ${(props) => props.theme.fontFamily};
@@ -7,7 +8,7 @@ export const BazziText = styled.Text`
 
 export const HomeScreenView = styled.View`
     display: flex;
-    gap: 20px;
+    gap: 40px;
     padding: 25px;
 `;
 
@@ -39,7 +40,7 @@ export const UserInfoCard = styled(CardView)`
 `;
 
 export const UserInfoText = styled(BazziText)`
-    font-size: 18px;
+    font-size: ${fontPercentage(15)}px;
 `;
 
 export const UserInfoPointView = styled.View`
@@ -55,6 +56,7 @@ export const PointView = styled.View`
 
 export const UserInfoPointText = styled(BazziText)`
     color: #629F3C;
+    font-size: ${fontPercentage(15)}px;
 `;
 
 export const ContentView = styled.View`
@@ -75,7 +77,7 @@ export const ContentCard = styled(CardView)`
 `;
 
 export const ContentText = styled(BazziText)`
-    font-size: 17px;
+    font-size: ${fontPercentage(15)}px;
 `;
 
 export const RankContainer = styled.View`
@@ -104,7 +106,7 @@ export const RankListView = styled.View`
     padding: 5px;
 `;
 export const RankText = styled(BazziText)`
-    font-size: 16px;
+    font-size: ${fontPercentage(16)}px;
 `;
 export const RankTextView = styled.View`
     display: flex;
@@ -112,14 +114,14 @@ export const RankTextView = styled.View`
     justify-content: space-between;
 `
 export const RankUniText = styled(BazziText)`
-    font-size: 16px;
+    font-size: ${fontPercentage(13)}px;
 `;
 export const RankNameText = styled(BazziText)`
-    font-size: 16px;
+    font-size: ${fontPercentage(13)}px;
 `;
 export const RankList = styled.FlatList`
     background-color: white;
-    width: 159px;
+    width: ${widthPercentage(159)}px;
     border-radius: 5px;
     padding: 5px;
 `
